@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Приложение To-Do List</title>
+    <style>
+      body {
+        width: 1300px;
+        background:#E0FFFF;
+      }
+      .dd{
+        width:1000px;
+        font-size:16px;
+      }
+
+    .zz {
+          width:400px;
+          font-size:16px;
+    }
+    .zzz {
+          width:400px;
+          font-size:16px;
+    }-
+    .add {
+  cursor: pointer;
+}
+.form input {
+  display: block;
+}
+    </style>
+  </head>
+<body>
+
+  <div>
+    <fieldset>
+      <legend>Личная карточка</legend>
+    <input class="dd" type="text" name="name" placeholder="Имя">
+
+    <br>    <br>
+    <input class="dd" type="text" name="sirname" placeholder="Фамилия">
+    <br>    <br>
+    <label for="tel" style="font-size:12px;">Номер телефона:</label><br>
+    <input class="dd" type="tel" id="tel" name="tele" placeholder="+7(___)___-__-__">
+      </fieldset>
+  </div>
+  <br>
+    <fieldset>
+      <legend>Карточка заказа</legend>
+        <div class="" id="profile">
+            <input type="text" class="zz" placeholder="Товар">
+            <input type="number" class="zzz" style="margin-left:30px;" placeholder="Количество">
+            <button class="del" onclick="delInput()" style="margin-left:27px;">Удалить товар</button>
+          </div>
+    </fieldset>
+
+    <div id="input0"></div>
+    <button class="add" onclick="addInput()">Добавить товар</button>
+
+
+
+  <script>
+
+    var x = 0;
+
+    function addInput() {
+      var profile = document.getElementById('profile');
+      var div = document.createElement('div');
+      div.id = 'input' + ++x;
+      div.innerHTML = '<input type="text" class="zz" placeholder="Товар"> <input type="number" class="zzz" style="margin-left:30px;" placeholder="Количество"><button class="del" onclick="delInput()" style="margin-left:30px;">Удалить товар</button>';
+      profile.appendChild(div);
+    }
+
+    function delInput() {
+      var div = document.getElementById('input' + x);
+      div.remove();
+      --x;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
